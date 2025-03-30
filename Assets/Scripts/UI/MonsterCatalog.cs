@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -12,7 +11,7 @@ namespace ChessMonsterTactics.UI
         [SerializeField] private Transform _monsterGrid;
         [SerializeField] private GameObject _monsterEntryPrefab;
         [SerializeField] private MonsterDetail _monsterDetailPanel;
-        
+
         private List<MonsterData> _monsters = new List<MonsterData>();
 
         public void Initialize()
@@ -26,14 +25,11 @@ namespace ChessMonsterTactics.UI
         {
             foreach (var monster in _monsters)
             {
-                GameObject entry = Instantiate(_monsterEntryPrefab, _monsterGrid);
-                
-                // Set monster sprite and name
-                entry.GetComponentInChildren<Image>().sprite = monster.Sprite;
-                entry.GetComponentInChildren<TMP_Text>().text = monster.Name;
-                
-                // Add click handler
-                Button button = entry.GetComponent<Button>();
+                GameObject entryObj = Instantiate(_monsterEntryPrefab, _monsterGrid);
+                MonsterCatalogEntry entry = entryObj.GetComponent<MonsterCatalogEntry>();
+                entry.Initialize(monster);
+
+                Button button = entryObj.GetComponent<Button>();
                 button.onClick.AddListener(() => ShowMonsterDetails(monster));
             }
         }
