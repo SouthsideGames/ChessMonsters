@@ -1,9 +1,0 @@
-27149;Monsters\Aqua Bishop
-33514;Monsters\Guardian King
-62937;Monsters\Inferno Knight
-27444;Monsters\Mystic Queen
-45946;Monsters\Stone Rook
-21398;Monsters\Vine Pawn
-61003;Monsters\Abilities\Active Root Strike
-10679;Monsters\Abilities\Passive Rooted Resilience
-35418;Monsters\Abilities\Ultimate Swarm Assault
