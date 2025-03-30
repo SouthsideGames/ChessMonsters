@@ -6,3 +6,15 @@ channel = "stable-24_05"
 
 [deployment]
 run = ["sh", "-c", "-run"]
+
+[workflows]
+runButton = "Unity Dev"
+
+[[workflows.workflow]]
+name = "Unity Dev"
+author = 40986401
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "dotnet build"

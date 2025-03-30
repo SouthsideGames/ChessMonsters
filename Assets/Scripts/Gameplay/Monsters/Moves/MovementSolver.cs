@@ -41,11 +41,10 @@ namespace ChessMonsterTactics.Gameplay
 
             return monster != null;
         }
-    
+
         protected bool TryCheckMonster(Vector2Int pos, Chessboard board)
         {
-            Chessboard.Node n = board.GetNode(pos);
-            return n?.Monster;
+            return board.GetNode(pos)?.Monster != null;
         }
     }
 }
